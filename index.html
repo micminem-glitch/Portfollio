@@ -2,47 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mike</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Mike | Full Stack Developer</title>
 
   <link rel="stylesheet" href="style.css" />
- <script src="script.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Hi, I'm Mike</h1>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">MIKE.</div>
 
-    <p class="subtitle">
-      I build WhatsApp bots and REST APIs with Node.js, Express, and MongoDB
-    </p>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <a href="#projects" class="btn">View Projects</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
 
-    <div id="projects">
-      <h2>Projects</h2>
+      <p class="tag">FULL STACK DEVELOPER</p>
 
-      <div id="repos" class="grid">
-        <p class="loading">Repos...</p>
+      <h1>
+        Hi, I'm <span>Mike</span>
+      </h1>
+
+      <p class="hero-description">
+        I build modern web applications, WhatsApp bots,
+        REST APIs, and automation systems using
+        Node.js, Express, MongoDB, and JavaScript.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a
+          href="https://github.com/micminem-glitch"
+          target="_blank"
+          class="btn-outline"
+        >
+          GitHub
+        </a>
       </div>
+
     </div>
 
-    <h2>Contact</h2>
+    <div class="hero-card">
+      <div class="glow"></div>
+
+      <div class="card-content">
+        <i class="fa-solid fa-code"></i>
+
+        <h3>Building Projects Daily</h3>
+
+        <p>
+          Focused on APIs, SaaS apps,
+          automation tools, and modern UI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <h2>About Me</h2>
 
     <p>
-      Email: micminem@gmail.com
-      <br />
-
-      WhatsApp:
-      <a href="https://wa.me/9110454189">Chat with me</a>
-      <br />
-
-      GitHub:
-      <a href="https://github.com/micminem-glitch" id="github-link">
-        github.com/micminem-glitch
-      </a>
+      I'm a passionate developer focused on building
+      scalable web applications and automation systems.
+      I enjoy creating projects that solve real-world
+      problems and improve digital workflows.
     </p>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+
+    <div class="section-title">
+      <h2>GitHub Projects</h2>
+      <p>My latest repositories from GitHub</p>
+    </div>
+
+    <div id="repos" class="projects-grid">
+      <p class="loading">Loading repositories...</p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <h2>Let's Connect</h2>
+
+  <p class="contact-text">
+    Open to freelance projects, collaborations,
+    and full-stack development opportunities.
+  </p>
+
+  <div class="contact-links">
+
+    <a href="mailto:micminem@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+      micminem@gmail.com
+    </a>
+
+    <a href="https://wa.me/2349110454189" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+      +234 911 045 4189
+    </a>
+
+    <a href="https://github.com/micminem-glitch" target="_blank">
+      <i class="fa-brands fa-github"></i>
+      github.com/micminem-glitch
+    </a>
+
+    <a href="#">
+      <i class="fa-solid fa-location-dot"></i>
+      Lagos, Nigeria
+    </a>
+
   </div>
+
+</section>
+
+    </div>
+
+  </section>
 
   <script src="script.js"></script>
 </body>

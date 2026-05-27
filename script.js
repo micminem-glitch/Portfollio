@@ -1,61 +1,53 @@
-const GITHUB_USERNAME = "micminem-glitchs"; // CHANGE THIS
+const GITHUB_USERNAME = "micminem-glitch";
 
 async function loadRepos() {
+
   const container = document.getElementById("repos");
 
   try {
-    const res = await fetch(
+
+    const response = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
     );
 
-    const repos = await res.json();
+    const repos = await response.json();
 
-    if (!Array.isArray(repos)) {
-      throw new Error("Failed to load");
-    }
+    const filteredRepos = repos.filter(
+      repo => !repo.fork
+    );
 
-    container.innerHTML = repos
-      .filter((repo) => !repo.fork)
-      .map(
-        (repo) => `
-        <div class="card">
+    container.innerHTML = filteredRepos
+      .map(repo => `
+        <div class="project-card">
+
           <h3>${repo.name}</h3>
 
-          <p>${repo.description || "No description provided"}</p>
+          <p>
+            ${repo.description || "No description available"}
+          </p>
 
-          <div class="meta">
-            ${
-              repo.language
-                ? `<span>● ${repo.language}</span>`
-                : ""
-            }
-
-            <span>★ ${repo.stargazers_count}</span>
+          <div class="project-meta">
+            <span>💻 ${repo.language || "Code"}</span>
+            <span>⭐ ${repo.stargazers_count}</span>
           </div>
 
-          <div style="margin-top: 12px;">
+          <div class="project-links">
             <a href="${repo.html_url}" target="_blank">
-              View Code
+              View Repository →
             </a>
-
-            ${
-              repo.homepage
-                ? ` | <a href="${repo.homepage}" target="_blank">Live Demo</a>`
-                : ""
-            }
           </div>
+
         </div>
-      `
-      )
+      `)
       .join("");
 
-    document.getElementById(
-      "github-link"
-    ).href = `https://github.com/${GITHUB_USERNAME}`;
+  } catch (error) {
 
-  } catch (err) {
-    container.innerHTML =
-      "<p class='loading'>Couldn't load repos. Check your username.</p>";
+    container.innerHTML = `
+      <p class="loading">
+        Failed to load repositories.
+      </p>
+    `;
   }
 }
 
